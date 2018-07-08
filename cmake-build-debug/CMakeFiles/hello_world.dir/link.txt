@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/hello_world.dir/src/glad/glad.c.o CMakeFiles/hello_world.dir/src/hello_world/main.cpp.o  -o bin/hello_world -lGL -lGLU -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor -lassimp 
