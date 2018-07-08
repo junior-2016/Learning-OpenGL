@@ -31,6 +31,7 @@ private:
         }
     }
 public:
+
     Shader(const char* vertex_shader_path, const char* fragment_shader_path){
         std::ifstream vertex_file(vertex_shader_path);
         std::ifstream fragment_file(fragment_shader_path);
@@ -60,6 +61,7 @@ public:
         glDeleteShader(vertex_shader_id);
         glDeleteShader(fragment_shader_id);
     }
+
     void use(){
         glUseProgram(program_id);
     }

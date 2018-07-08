@@ -5,8 +5,11 @@
 #include <GLFW/glfw3.h>
 #include <cmath>
 #include "../../include/Shader.h"
-using namespace std;
-const std::string shader_root = "../../resource/shader/";
+#include "../../include/Config.h"
+
+std::string vs_path = SHADER_ROOT+"hello_world/vertex.vs";
+std::string fs_path1 = SHADER_ROOT+"hello_world/fragment1.fs";
+std::string fs_path2 = SHADER_ROOT+"hello_world/fragment2.fs";
 
 // window_size_call_back
 void frameBufferSizeCallBack(GLFWwindow * window,int w,int h){
@@ -44,10 +47,8 @@ int main(){
     // register call_back_func
     glfwSetFramebufferSizeCallback(window,frameBufferSizeCallBack);
 
-    Shader shader1("../../resource/shader/hello_world/vertex.vs",
-                   "../../resource/shader/hello_world/fragment1.fs");
-    Shader shader2("../../resource/shader/hello_world/vertex.vs",
-                   "../../resource/shader/hello_world/fragment2.fs");
+    Shader shader1(vs_path.c_str(),fs_path1.c_str());
+    Shader shader2(vs_path.c_str(),fs_path2.c_str());
 
     float vertices [] ={
             -0.5,0.5,0.0,
